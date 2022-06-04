@@ -10,7 +10,6 @@
         <meta content="Themesdesign" name="author" />
         <!-- App favicon -->
         <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.ico')}}">
-
         <!-- Bootstrap Css -->
         <link href="{{ asset('backend/assets/css/bootstrap.min.css')}}" id="bootstrap-style" rel="stylesheet" type="text/css" />
         <!-- Icons Css -->
@@ -52,8 +51,6 @@
                                         <input class="form-control" id="password" name="password" type="password" required="" placeholder="Password" value="{{ old('password') }}">
                                     </div>
                                 </div>
-    
-                               
     
                                 <div class="form-group mb-3 text-center row mt-3 pt-1">
                                     <div class="col-12">
