@@ -10,5 +10,6 @@
         <script src="assets/plugin/swiper/js/main.js"></script>
     <body>
         <h1>Contact Page</h1>
+        <a href="{{ route('about.page') }}">About</a>
    </body>
 </html>
