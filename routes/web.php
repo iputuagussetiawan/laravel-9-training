@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\demo\DemoController;
-use GuzzleHttp\Middleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,17 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
-
-// Route::get('/about', [DemoController::class, 'index']);
-// Route::get('/contact', [DemoController::class, 'contact']);
-
-//Route Group
-Route::controller(DemoController::class)->group(function () {
-    Route::get('/about', 'index')->name('about.page')->Middleware('check');
-    Route::get('/contact', 'contact')->name('contact.page');
-});
-
-Route::get('/contact', function () {
-    return view('contact');
-});
+require __DIR__.'/auth.php';
