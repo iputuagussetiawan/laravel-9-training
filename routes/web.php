@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\demo\DemoController;
+use GuzzleHttp\Middleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,8 +26,8 @@ Route::get('/', function () {
 
 //Route Group
 Route::controller(DemoController::class)->group(function () {
-    Route::get('/about', 'index')->name('about.page');
-    Route::get('/contact', 'contact')->name('contact.page');;
+    Route::get('/about', 'index')->name('about.page')->Middleware('check');
+    Route::get('/contact', 'contact')->name('contact.page');
 });
 
 Route::get('/contact', function () {
