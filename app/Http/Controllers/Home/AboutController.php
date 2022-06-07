@@ -15,9 +15,9 @@ class AboutController extends Controller
         $aboutpage = About::find(1);
         return view('admin.about_page.about_page_all',compact('aboutpage'));
 
-     } // End Method 
+    } // End Method 
 
-     public function UpdateAbout(Request $request){
+    public function UpdateAbout(Request $request){
 
         $about_id = $request->id;
 
@@ -37,14 +37,13 @@ class AboutController extends Controller
 
             ]); 
             $notification = array(
-            'message' => 'About Page Updated with Image Successfully', 
-            'alert-type' => 'success'
-        );
+                'message' => 'About Page Updated with Image Successfully', 
+                'alert-type' => 'success'
+            );
 
-        return redirect()->back()->with($notification);
+            return redirect()->back()->with($notification);
 
         } else{
-
             About::findOrFail($about_id)->update([
                 'title' => $request->title,
                 'short_title' => $request->short_title,
@@ -52,14 +51,23 @@ class AboutController extends Controller
                 'long_description' => $request->long_description,
 
             ]); 
-            $notification = array(
-            'message' => 'About Page Updated without Image Successfully', 
-            'alert-type' => 'success'
-        );
+                $notification = array(
+                'message' => 'About Page Updated without Image Successfully', 
+                'alert-type' => 'success'
+            );
 
-        return redirect()->back()->with($notification);
+            return redirect()->back()->with($notification);
 
         } // end Else
 
-     } // End Method 
+    } // End Method 
+
+
+    public function HomeAbout(){
+        $aboutpage = About::find(1);
+        return view('frontend.about_page',compact('aboutpage'));
+    }// End Method 
+
+    
+
 }
