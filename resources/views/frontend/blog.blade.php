@@ -1,14 +1,13 @@
 @extends('frontend.main_master')
 @section('main')
     <main>
-
         <!-- breadcrumb-area -->
         <section class="breadcrumb__wrap">
             <div class="container custom-container">
                 <div class="row justify-content-center">
                     <div class="col-xl-6 col-lg-8 col-md-10">
                         <div class="breadcrumb__wrap__content">
-                            <h2 class="title"> {{ $categoryname->blog_category }} </h2>
+                            <h2 class="title"> All Blogs </h2>
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -39,7 +38,7 @@
                 <div class="row">
                     <div class="col-lg-8">
 
-                        @foreach ($blogpost as $item)
+                        @foreach ($allblogs as $item)
                             <div class="standard__blog__post">
                                 <div class="standard__blog__thumb">
                                     <a href="blog-details.html"><img src="{{ asset($item->blog_image) }}" alt=""></a>
@@ -53,7 +52,8 @@
                                         <span class="post__by">By : <a href="#">Halina Spond</a></span>
                                     </div>
                                     <h2 class="title"><a
-                                            href="{{ route('blog.details', $item->id) }}">{{ $item->blog_title }}</a></h2>
+                                            href="{{ route('blog.details', $item->id) }}">{{ $item->blog_title }}</a>
+                                    </h2>
                                     <p>{!! Str::limit($item->blog_description, 200) !!} </p>
                                     <ul class="blog__post__meta">
                                         <li><i class="fal fa-calendar-alt"></i>
@@ -169,8 +169,6 @@
             </div>
         </section>
         <!-- blog-area-end -->
-
-
         <!-- contact-area -->
         <section class="homeContact homeContact__style__two">
             <div class="container">
@@ -203,6 +201,5 @@
             </div>
         </section>
         <!-- contact-area-end -->
-
     </main>
 @endsection
