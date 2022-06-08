@@ -29,7 +29,7 @@
                                 </ul>
                             </div>
                             <div class="header__btn d-none d-md-block">
-                                <li><a href="{{ route('contact.me') }}">contact me</a></li>
+                                <a href="{{ route('contact.me') }}" class="btn">Contact me</a>
                             </div>
                         </nav>
                     </div>
