@@ -15,6 +15,9 @@
                                     <div class="col-sm-10">
                                         <input name="portfolio_name" class="form-control" type="text"
                                             id="example-text-input">
+                                        @error('portfolio_name')
+                                            <span class="text-danger"> {{ $message }} </span>
+                                        @enderror
                                     </div>
                                 </div>
                                 <!-- end row -->
@@ -23,6 +26,9 @@
                                     <div class="col-sm-10">
                                         <input name="portfolio_title" class="form-control" type="text"
                                             id="example-text-input">
+                                        @error('portfolio_title')
+                                            <span class="text-danger"> {{ $message }} </span>
+                                        @enderror
                                     </div>
                                 </div>
                                 <!-- end row -->
